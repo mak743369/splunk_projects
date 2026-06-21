@@ -223,6 +223,7 @@ index=main sourcetype=linux_secure "authentication failure"
 index=main sourcetype=XmlWinEventLog (EventCode=4720 OR EventCode=4732)
 | stats count by EventCode, SubjectUserName, TargetUserName, MemberName
 ```
+[Windows query screenshot 1](images/splunk_query2.png)
 
 **Purpose:** Detect user account creation and addition of users to the local Administrators group.
 
@@ -241,6 +242,7 @@ net localgroup Administrators attacker /add
 index=main sourcetype=XmlWinEventLog (EventCode=4648)
 | table EventCode, action, dest, host, name, sourcetype, subject, user
 ```
+[Windows query screenshot 2](images/splunk_query3.png)
 
 **Purpose:** Detect attempts to use explicit credentials for authentication.
 
@@ -261,7 +263,7 @@ index=main sourcetype=pfsense:filterlog
 | stats count by src_ip, dest_ip, action
 | sort - count
 ```
-
+[pfsense query screenshot](images/splunk_query4.png)
 
 **Purpose:** Monitor network connections observed by the pfSense firewall.
 
