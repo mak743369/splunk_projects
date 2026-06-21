@@ -131,7 +131,7 @@ Configured:
 * Windows Host IP as Syslog Destination
 * UDP Port 514
 
-[pfsense configuration](images/pfsense_config.png)
+[pfsense configuration](images/pfsense_config.jpeg)
 
 #### Splunk Configuration
 
