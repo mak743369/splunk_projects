@@ -131,13 +131,7 @@ Configured:
 * Windows Host IP as Syslog Destination
 * UDP Port 514
 
-Selected log categories:
-
-* Firewall
-* DHCP
-* DNS Resolver
-* System
-* VPN
+[pfsense configuration](images/pfsense_config.png)
 
 #### Splunk Configuration
 
@@ -282,19 +276,6 @@ curl http://example.com
 ```
 
 These activities generated firewall events that were forwarded from pfSense to Splunk via Syslog and normalized using the pfSense Technology Add-on.
-
----
-
-### Planned Screenshots
-
-* Splunk Search Interface
-* Windows Security Events (Event IDs 4720, 4732, 4648)
-* Ubuntu Authentication Logs
-* pfSense Firewall Logs
-* pfSense Remote Syslog Configuration
-* Parsed & Normalized Events
-
----
 
 ## Forwarder Configurations
 
