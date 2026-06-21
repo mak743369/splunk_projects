@@ -209,7 +209,7 @@ index=main sourcetype=linux_secure "authentication failure"
 | stats count by host, user
 | where count >= 3
 ```
-[Linux query screenshot](/images/splunk_query1.png)
+[Linux query screenshot](Splunk_home_lab/images/splunk_query1.png)
 
 **Purpose:** Detect multiple failed authentication attempts on Linux systems.
 
