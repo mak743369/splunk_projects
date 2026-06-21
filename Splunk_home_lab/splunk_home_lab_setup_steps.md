@@ -209,6 +209,7 @@ index=main sourcetype=linux_secure "authentication failure"
 | stats count by host, user
 | where count >= 3
 ```
+[Linux query screenshot](Splunk_home_lab/images/splunk_query1.png)
 
 **Purpose:** Detect multiple failed authentication attempts on Linux systems.
 
@@ -261,6 +262,7 @@ index=main sourcetype=pfsense:filterlog
 | sort - count
 ```
 
+
 **Purpose:** Monitor network connections observed by the pfSense firewall.
 
 **Log Generation:**
@@ -281,22 +283,14 @@ These activities generated firewall events that were forwarded from pfSense to S
 
 ---
 
-## Screenshots
-
-> Screenshots will be added in a future update.
-
 ### Planned Screenshots
 
 * Splunk Search Interface
 * Windows Security Events (Event IDs 4720, 4732, 4648)
 * Ubuntu Authentication Logs
 * pfSense Firewall Logs
-* Data Inputs Configuration
-* Windows Universal Forwarder Configuration
-* Ubuntu Universal Forwarder Configuration
 * pfSense Remote Syslog Configuration
 * Parsed & Normalized Events
-* VirtualBox Lab Environment
 
 ---
 
