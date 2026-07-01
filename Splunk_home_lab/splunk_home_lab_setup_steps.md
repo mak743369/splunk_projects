@@ -81,7 +81,6 @@ Although Splunk Enterprise was installed locally on Windows, a Universal Forward
 
 * Security Event Logs
 * System Event Logs
-* Application Event Logs
 
 #### Configuration
 
