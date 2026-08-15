@@ -193,7 +193,7 @@ dest_port
 
 ---
 
-## Splunk Queries
+## Splunk Detections
 
 ### Linux Authentication Failures
 
@@ -338,19 +338,6 @@ server = 192.168.1.50:9997
 
 ---
 
-## Lessons Learned
-
-* Deploying Splunk Enterprise in a virtualized environment
-* Configuring Universal Forwarders on Windows and Linux
-* Configuring Syslog ingestion from pfSense
-* Troubleshooting log forwarding issues
-* Installing and validating Splunk Technology Add-ons
-* Normalizing heterogeneous log sources
-* Creating SPL searches for authentication, endpoint, and network activity
-* Understanding CIM-compliant field extraction and event enrichment
-
----
-
 ## Acknowledgements
 
 * Splunk Documentation
@@ -360,13 +347,3 @@ server = 192.168.1.50:9997
 * Cybersecurity and SOC Analyst Learning Communities
 
 ---
-
-## Future Improvements
-
-* Add a dedicated Kali Linux attacker VM
-* Simulate SSH brute-force attacks
-* Generate Nmap reconnaissance activity
-* Build Splunk dashboards and alerts
-* Create correlation searches across Windows, Linux, and pfSense logs
-* Implement MITRE ATT&CK mappings for generated events
-* Expand log sources with Sysmon and Zeek
