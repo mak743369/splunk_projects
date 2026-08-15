@@ -274,6 +274,48 @@ nc -zv 192.168.56.1 22
 curl http://example.com
 ```
 
+### SSH bruteforce ubuntu machine
+
+```spl
+index=main sourcetype=linux_secure vboxuser app=ssh (action=failed OR action=blocked) 
+| stats count by src_ip, user, action
+```
+[pfsense query screenshot](images/ssh_bruteforce)
+
+**Purpose:** Monitor SSH bruteforce attempts from an attacker machine
+
+**Log Generation:**
+
+```bash
+hydra -l rdx -P ssh-passwords.txt ssh://192.168.1.61  (Run from attacker machine)
+```
+---
+
+### Ubuntu machine sudo attempts
+
+```spl
+index=main sourcetype=linux_secure root "incorrect password"
+```
+[pfsense query screenshot](images/linux_sudo_attempts)
+
+**Purpose:** Monitor ubuntu machine sudo attempts
+
+**Log Generation:**
+
+```bash
+sudo -l
+
+sudo -s   (type wrong passwords)
+```
+---
+
+
+
+
+
+
+
+
 These activities generated firewall events that were forwarded from pfSense to Splunk via Syslog and normalized using the pfSense Technology Add-on.
 
 ## Forwarder Configurations
