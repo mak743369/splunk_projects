@@ -280,7 +280,7 @@ curl http://example.com
 index=main sourcetype=linux_secure vboxuser app=ssh (action=failed OR action=blocked) 
 | stats count by src_ip, user, action
 ```
-[pfsense query screenshot](images/ssh_bruteforce)
+[ssh bruteforce screenshot](images/ssh_bruteforce.png)
 
 **Purpose:** Monitor SSH bruteforce attempts from an attacker machine
 
@@ -296,7 +296,7 @@ hydra -l rdx -P ssh-passwords.txt ssh://192.168.1.61  (Run from attacker machine
 ```spl
 index=main sourcetype=linux_secure root "incorrect password"
 ```
-[pfsense query screenshot](images/linux_sudo_attempts)
+[sudo attempts screenshot](images/linux_sudo_attempts.png)
 
 **Purpose:** Monitor ubuntu machine sudo attempts
 
