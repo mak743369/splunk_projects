@@ -310,6 +310,25 @@ sudo -s   (type wrong passwords)
 ---
 
 
+### Windows failed login attempts
+
+```spl
+index=main sourcetype="XmlWinEventLog" 4625 
+| stats count by src_ip, user
+```
+[sudo attempts screenshot](images/windows_failed_logons.png)
+
+**Purpose:** Monitor windows failed login attempts
+
+**Log Generation:**
+
+```bash
+smbclient -L //MACHINE_IP -U <USERNAME>
+```
+Type wrong passwords to generate failed login logs
+---
+
+
 
 
 
