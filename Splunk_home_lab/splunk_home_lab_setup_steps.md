@@ -41,22 +41,6 @@ The primary goal was to gain hands-on experience with SIEM deployment, log forwa
 * Created a pfSense VM to function as the firewall/router.
 * Verified connectivity between all systems.
 
-#### Network Modes Used
-
-The lab used different VirtualBox networking modes depending on the testing scenario:
-
-* **NAT Mode**
-
-  * Used when forwarding Ubuntu logs to Splunk via Universal Forwarder.
-  * Provides Internet connectivity for package installation, updates, and external communication.
-
-* **Host-Only Mode**
-
-  * Used when generating and monitoring pfSense firewall traffic.
-  * Both Ubuntu and pfSense operated within an isolated lab network, allowing firewall events to be generated and analyzed without exposing the environment externally.
-
-Networking modes were switched as needed to support both log forwarding and firewall monitoring use cases.
-
 ---
 
 ### 2. Splunk Enterprise Installation
