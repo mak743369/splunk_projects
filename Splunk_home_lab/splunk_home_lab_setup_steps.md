@@ -273,6 +273,7 @@ nc -zv 192.168.56.1 22
 ```bash
 curl http://example.com
 ```
+These activities generated firewall events that were forwarded from pfSense to Splunk via Syslog and normalized using the pfSense Technology Add-on.
 
 ### SSH bruteforce ubuntu machine
 
@@ -329,13 +330,46 @@ Type wrong passwords to generate failed login logs
 ---
 
 
+### Detection of Repeated Blocked Network Connections Using pfSense Firewall Logs
+
+```spl
+index=main sourcetype="pfsense:filterlog" action=blocked
+| stats count by action, src_ip, dest_ip, dest_port, transport
+| sort - count
+```
+[sudo attempts screenshot](images/firewall_block.png)
+
+**Purpose:** Monitor blocked connection attempts
+
+**Log Generation:**
+Create a block rule in firewall that blocks port 4444.
+
+```bash
+nc -zv -w 2 192.0.2.1 4444
+```
+Run the command multiple times.
+---
 
 
+### Port scanning detection
 
+```spl
+index=main sourcetype="pfsense:filterlog" action=blocked
+| stats dc(dest_port) as unique_ports count by src_ip, dest_ip
+| where unique_ports >= 5
+| sort - unique_ports
+```
+[sudo attempts screenshot](images/firewall_portscan.png)
 
+**Purpose:** Monitor port scanning
 
+**Log Generation:**
 
-These activities generated firewall events that were forwarded from pfSense to Splunk via Syslog and normalized using the pfSense Technology Add-on.
+```bash
+nmap -sS -Pn -p 21,22,23,25,53,80,110,135,139,443,445,3389,4444 <MACHINE_IP>
+```
+---
+
 
 ## Forwarder Configurations
 
